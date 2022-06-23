@@ -1,7 +1,6 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import ProductAll from "./page/ProductAll";
-import ProductDetail from "./page/ProductDetail";
 import Login from "./page/Login";
 import Navbar from "./component/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";

@@ -3,19 +3,17 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProductCard from "../component/ProductCard";
 import { useSearchParams } from "react-router-dom"; // useSearchParams API URL 쿼리값 읽어오기
+import { productAction } from "../redux/actions/productAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const ProductAll = () => {
-  const [productList, setProductList] = useState([]);
+  const productList = useSelector((state) => state.product.productList);
   const [query, setQuery] = useSearchParams(); // useSearchParams API URL 쿼리값 읽어오기
+  const dispatch = useDispatch();
 
   const getProducts = async () => {
     let searchQuery = query.get("q") || "";
-
-    let url = ` https://my-json-server.typicode.com/S-MunSoo/ToyProject-H-M-App/products?q=${searchQuery}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    console.log("data???", data);
-    setProductList(data);
+    dispatch(productAction.getProducts(searchQuery));
   };
 
   // 상품 API 호출
