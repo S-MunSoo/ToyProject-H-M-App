@@ -14,7 +14,16 @@ db.json url : http://localhost:4000/products<br>
 #### 사용기술스택
 
 - React 라이브러리
-- Redux
+- Redux middleware
+
+#### Redux middleware
+
+```
+npm install redux-thunk
+
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+```
 
 #### Redux DevTol Extension
 
