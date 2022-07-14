@@ -7,6 +7,7 @@ import { productAction } from "../redux/actions/productAction";
 import { useDispatch, useSelector } from "react-redux";
 
 const ProductAll = () => {
+  // useSelector 로 데이터를 가져와 state 대신 사용한다.
   const productList = useSelector((state) => state.product.productList);
   const [query, setQuery] = useSearchParams(); // useSearchParams API URL 쿼리값 읽어오기
   const dispatch = useDispatch();

@@ -6,6 +6,7 @@ function getProducts(searchQuery) {
     let response = await fetch(url);
     let data = await response.json();
     console.log("data???", data);
+    // dispatch를 통해 리듀서로 data 액션 호출
     dispatch({ type: "GET_PRODUCT_SUCCESS", payload: { data } });
   };
 }
